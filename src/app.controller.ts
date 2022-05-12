@@ -9,4 +9,12 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+  @Get('dos')
+  getDos(): string {
+    return "HOLA DOSS2222";
+  }
+  @Get('product/:id')
+  getProduct(): string {
+    return `Mi product is ${id}`;
+  }
 }
