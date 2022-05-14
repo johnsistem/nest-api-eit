@@ -17,6 +17,6 @@ export class AppController {
   }
   @Get('buscar/:query/:page/')
   getBuscar(@Param('query') query, @Param('page') page): string {
-    return `Mi product is ${query} -page:${page}`;
+    return `Mi product  ${query} -page:${page}`;
   }
 }
