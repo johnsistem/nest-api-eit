@@ -1,5 +1,5 @@
 import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
-import { Player } from './player.intity';
+import { Player } from './player.entity';
 import { PlayerService } from './player.service';
 
 
@@ -10,13 +10,10 @@ export class PlayerController {
 
    @Get()
    getAll() {
-      return this.playerService.getPlayers();
+      return this.playerService.findAll();
    }
    
-   @Get(':id')
-   getPlayer(@Param('id',ParseIntPipe) id):Player {
-      return this.playerService.getPlayer(id);
-   }
+  
    
    
    

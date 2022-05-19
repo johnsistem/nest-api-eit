@@ -1,10 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { Player } from './player.intity';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Player } from './player.entity';
 
 @Injectable()
 export class PlayerService {
 
-   private players: Player[] = [
+  /*  private players: Player[] = [
 
       {
          id: 1,
@@ -22,13 +24,17 @@ export class PlayerService {
          edad: 22,
       }
 
-   ]
+   ] */
 
-   getPlayers() {
-      return this.players;
-   }
-   getPlayer(id) {
-      return this.players.find(player => player.id == id)
+   constructor(
+      @InjectRepository(Player)
+      private playerRepository: Repository<Player>,
+   ) { }
+
+
+
+   findAll(): Promise<Player[]> {
+      return this.playerRepository.find();
    }
 
 }
