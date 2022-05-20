@@ -45,6 +45,7 @@ export class PlayerService {
      // return body;
       return this.playerRepository.save(createplayer)
    }
+   
    deleteOne(deleteplayer:any) {
      // return body;
       return this.playerRepository.delete(deleteplayer)

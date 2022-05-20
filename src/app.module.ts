@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
+//import { AppService } from './app.service';
 import { PlayerController } from './player/player.controller';
 import { PlayerService } from './player/player.service';
 import { Player } from './player/player.entity';
@@ -21,6 +21,6 @@ import { Player } from './player/player.entity';
     TypeOrmModule.forFeature([Player])
   ],
   controllers: [AppController, PlayerController],
-  providers: [AppService, PlayerService],
+  providers: [ PlayerService],
 })
 export class AppModule {}
