@@ -37,4 +37,18 @@ export class PlayerService {
       return this.playerRepository.find();
    }
 
+   findOne(id: number) {
+      return this.playerRepository.findOne(id)
+   }
+
+   createOne(createplayer:any) {
+     // return body;
+      return this.playerRepository.save(createplayer)
+   }
+   deleteOne(deleteplayer:any) {
+     // return body;
+      return this.playerRepository.delete(deleteplayer)
+   }
+   
+
 }

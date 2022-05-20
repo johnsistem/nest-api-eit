@@ -6,7 +6,7 @@ export class Player {
    id: number;
 
    @Column()
-   Name: string;
+   name: string;
 
    @Column()
    posicion: string;
