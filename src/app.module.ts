@@ -6,6 +6,7 @@ import { AppController } from './app.controller';
 import { PlayerController } from './player/player.controller';
 import { PlayerService } from './player/player.service';
 import { Player } from './player/player.entity';
+import { ItemsModule } from './items/items.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -18,7 +19,8 @@ import { Player } from './player/player.entity';
     entities: [Player],
     synchronize: true,
   }),
-    TypeOrmModule.forFeature([Player])
+    TypeOrmModule.forFeature([Player]),
+    ItemsModule
   ],
   controllers: [AppController, PlayerController],
   providers: [ PlayerService],

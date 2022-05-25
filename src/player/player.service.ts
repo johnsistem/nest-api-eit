@@ -51,5 +51,10 @@ export class PlayerService {
       return this.playerRepository.delete(deleteplayer)
    }
    
+   update(id:number,updateplayer:any) {
+     // return body;
+      return this.playerRepository.update(id,updateplayer)
+   }
+   
 
 }

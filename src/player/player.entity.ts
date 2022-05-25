@@ -16,6 +16,8 @@ export class Player {
 
    @Column()
    edad: string;
+   @Column()      
+   juegos: number;
 }
 
 
